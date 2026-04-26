@@ -1,0 +1,300 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	background-color: black;
+	color: white;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.welcome_user{
+    padding: 10px;
+    font-size: 20px;
+}
+
+.about{
+	background-color: black;
+    color: white;
+    font-size: 25px;
+    text-indent: 30px;
+    line-height: 40px;
+    text-align: justify;
+    padding-left: 100px;
+    padding-right: 100px;
+	margin: 50px 60px
+}
+
+.menu{
+    background-color: black;
+	display: flex;
+
+}
+
+.menu li{
+    padding: 10px;
+    list-style: none;
+ }
+
+ .menu a{
+    text-decoration: none;
+    color: white;
+    white-space: nowrap;
+ }
+
+ .begin{
+    height: 600px;
+    background-image: url('../images/aleksandr.jpg');
+    background-size: cover;
+    text-align: center;
+}
+
+h1{
+    color: white;
+    font-size: 70px;
+    padding-top: 150px;
+}
+
+h2{
+    font-size: 40px;
+
+}
+
+
+
+.begin p{
+   padding-top: 100px;
+   font-size: 30px;
+   color: white;
+   text-shadow: 2px 2px 2px black;
+
+}
+
+footer{
+	background-color: black;
+    color: white;
+    font-size: 15px;
+    text-align: center;
+
+}
+
+form{
+    width: 400px;
+    box-sizing: border-box;
+	margin: 0 auto;
+	font-size: 30px;
+	text-align: center;
+	background: linear-gradient(to left, black, #1e1e1e, grey);
+	padding: 2rem;
+	border-radius: 10px;
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+	text-align: center;
+	max-width: 400px;
+	margin-bottom: 1.2rem;
+
+}
+.date {
+    display: flex;
+    justify-content: start;
+    font-size: 23px;
+}
+
+input{
+	width: 100%;
+	font-size: 20px;
+	padding: 5px;
+	margin: 10px 0;
+    box-sizing: border-box;
+
+}
+
+option{
+	font-size: 20px;
+
+}
+
+button{
+	background: #007BFF;
+	color: white;
+	font-size: 20px;
+	margin: 15px;
+	padding: 10px;
+	display: inline-block;
+	text-decoration: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-family: sans-serif;
+    border: none;
+    transition: 0.3s;
+}
+button:hover {
+    background: #0056b3;
+    cursor: pointer;
+}
+
+ .logo_articles{
+    height: 600px;
+    background-image: url('../images/tunel.jpg');
+    background-size: cover;
+    text-align: center;
+}
+
+.link{
+    color: white;
+}
+.place_nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.btn {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    width: 100%;
+}
+.btn_in, .btn_up {
+    display: inline-block; /* Щоб відступи працювали коректно */
+    padding: 8px 16px;     /* Збільшив внутрішні відступи для краси */
+    background: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 16px;       /* Оптимальний розмір шрифту */
+    font-family: sans-serif; /* Бажано додати шрифт, щоб було читабельно */
+    transition: 0.3s;
+    margin-left: 10px;     /* Відступ між кнопками */
+    border: none;          /* Прибирає рамку, якщо це тег <button> */
+}
+
+.button_in:hover, .button_up:hover {
+    background: #0056b3;
+    cursor: pointer;
+}
+.logo_articles{
+    height: 600px;
+    background-image: url('../images/tunel.jpg');
+    background-size: cover;
+    text-align: center;
+}
+
+.link{
+    color: white;
+}
+
+.container{
+    border: solid 3px #9fa59d;
+    margin: 30px 100px;
+    padding: 10px;
+    display: flex;
+}
+
+.post_img{
+    width: 270px;
+    overflow: hidden;
+}
+
+.post_img img{
+    height: 390px;
+}
+
+.article_text{
+    max-width: 850px;
+    padding: 20px;
+}
+
+.text{
+    font-size: 15px;
+    text-align: justify;
+    text-indent: 15px;
+    max-height: 160px;
+    overflow: hidden;
+}
+
+.article_text h3{
+    color: #c4ff9e;
+}
+
+.details{
+    color: #9fa59d;
+    font-size: 15px;
+    margin: 30px 0
+}
+
+.ful_text{
+    font-size: 25px;
+    text-align: justify;
+    text-indent: 15px;
+}
+
+.full_post_container{
+    border: solid 3px #9fa59d;
+    margin: 30px 100px 30px 100px;
+    padding: 20px;
+}
+
+.full_post_img{
+    text-align: center;
+    padding-top: 20px;
+}
+
+.delete_form{
+    text-align: left;
+}
+
+.post_text_link{
+    border: solid 3px #9fa59d;
+    margin: 20px;
+    padding: 10px;
+    text-align: center;
+}
+
+.post_text_link:hover{
+    border: solid 3px #c4ff9e;
+
+}
+
+.post_text_link a{
+    color: white;
+    font-size: 15px;
+    text-decoration: none;
+
+
+}
+.post_text_link a:hover{
+    color: #c4ff9e;
+}
+.alert {
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    border-radius: 5px;
+    padding: 8px;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+.alert.danger {
+    background-color: thistle;
+    color: red;
+    border: 1px solid red;
+}
+.alert.success {
+    background-color: lightgreen;
+    color: darkgreen;
+    border: 1px solid green;
+}
+.close {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    line-height: 1;
+    font-size: 15px;
+    cursor: pointer;
+}

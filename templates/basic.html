@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rediscover the world</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="place_nav">
+            <ul class="menu">
+                <li><a href="{{ url_for('index') }}">MAIN</a></li>
+                <li><a href="/places">INTERESTING PLACES</a></li>
+            </ul>
+        </nav>
+        <div class="btn">
+            {% if request.endpoint != 'login' %}
+            <a href="{{ url_for('login') }}" class="btn_in">Sign in</a>
+            {% endif %}
+            {% if request.endpoint != 'form' %}
+            <a href="{{ url_for('form') }}" class="btn_up">Sign up</a>
+            {% endif %}
+        </div>
+        <div class="welcome_user">
+				{% block welcome %}
+                {% endblock %}
+			</div>
+    </header>
+    <main>
+        {% block main %}
+        {% endblock %}
+    </main>
+    <footer>
+        <p>Copyright � 1999-2020 Ctrip.com (Hong Kong) Limited.<br>All rights reserved.
+Site Operator: Ctrip.com (Hong Kong) Limited<br>
+Hong Kong Travel License No. 352367</p>
+    </footer>
+</body>
+</html>

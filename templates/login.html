@@ -1,0 +1,11 @@
+{% extends "basic.html" %}
+
+{% block main %}
+<form name="login" method="post">
+    <h2>Login to admin</h2>
+    <input name="email" type="email" required placeholder="Your email">
+    <input name="password" type="password" required placeholder="Your password">
+
+    <button name="submit" type="submit">Log in</button>
+</form>
+{% endblock %}
