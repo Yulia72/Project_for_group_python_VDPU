@@ -13,15 +13,23 @@
                 <li><a href="/places">INTERESTING PLACES</a></li>
             </ul>
         </nav>
-        <div class="btn">
-            {% if request.endpoint != 'login' %}
-            <a href="{{ url_for('login') }}" class="btn_in">Sign in</a>
+            {% if request.endpoint != 'admin' and request.endpoint != 'user_form' %}
+            <div class="btn">
+                {% if current_user.is_authenticated %}
+                <span style="color: white; margin-right: 15px;">
+                    Привіт, {{current_user.name}}!
+                </span>
+                <a href="{{ url_for('logout') }}"
+                   class="btn_in">Logout</a>
+                {% else %}
+                <a href="/login" class="btn_in">Sing in</a>
+                <a href="/form" class="btn_up">Sing up</a>
+                {% endif %}
+
+            </div>
             {% endif %}
-            {% if request.endpoint != 'form' %}
-            <a href="{{ url_for('form') }}" class="btn_up">Sign up</a>
-            {% endif %}
-        </div>
-        <div class="welcome_user">
+        	</nav>
+			<div class="welcome_user">
 				{% block welcome %}
                 {% endblock %}
 			</div>
