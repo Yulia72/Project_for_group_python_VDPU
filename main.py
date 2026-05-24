@@ -1,35 +1,35 @@
-from flask import Flask
-from flask import render_template, request, url_for, flash, redirect
-from flask_sqlalchemy import SQLAlchemy
+from flask import Flask #імпортуємо flask/термінал pip install flask
+from flask import render_template, request, url_for, flash, redirect #відкриває HTML-шаблони,отримання даних з форми, посилання на декоратор, показує повідомлення (накриклад про нвірні введені дані), перенаправлення користувача
+from flask_sqlalchemy import SQLAlchemy #ORМ для робот з базою даних/pip install flask-sqlalchemy
 from flask_login import LoginManager, UserMixin, login_user, current_user, logout_user
-from werkzeug.utils import redirect
-from werkzeug.security import generate_password_hash, check_password_hash
+#головний менеджер логіну, додає методи користувача, логінить користувача, поточний користувач, вихід з акаунту/ pip install flask-login
+from werkzeug.security import generate_password_hash, check_password_hash #хешування паролю
 
-app = Flask(__name__)
+app = Flask(__name__) #створення flask
 app.config['SECRET_KEY'] = 'your-very-secret-key'
 app.config['SQLALCHEMY_DATABASE_URI']='sqlite:///side.db'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=False
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=False #вимикає зайве відстеження змін
 
-db = SQLAlchemy(app)
-login_manager = LoginManager()
+db = SQLAlchemy(app)#створюємо об'єкт бази даних
+login_manager = LoginManager()#створюємо менеджер логіну
 login_manager.init_app(app)
 login_manager.login_view = 'login'
 
-class User(db.Model, UserMixin):
+class User(db.Model, UserMixin):#створення таблиця бази даних
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(100), nullable=False, unique=True)
+    name = db.Column(db.String(100), nullable=False, unique=True)#не можна пустим залишати рядок, унікальне ім'я
     email = db.Column(db.String(120), nullable=False, unique=True)
     password = db.Column(db.String(500), nullable=False)
 with app.app_context():
     db.create_all()
 
-@login_manager.user_loader
+@login_manager.user_loader #логін менеджер шукає користувача у базі по його id
 def load_user(user_id):
     return User.query.get(int(user_id))
 
 @app.route('/')
 def index():
-    users = User.query.all()
+    users = User.query.all() #отримуємо інформацію користувачів у терміналі
     for user in users:
         print(user.id, user.name, user.email, user.password)
     return render_template('index.html', users=users)
@@ -45,9 +45,6 @@ def articles():
                     'How to survive on a desert island']
     return render_template('articles.html', articles = new_articles)
 
-@app.route('/admin')
-def admin():
-    return render_template('login.html')
 
 @app.route('/details')
 def details():
